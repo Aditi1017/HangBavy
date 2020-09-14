@@ -1,6 +1,12 @@
 import 'dart:convert';
-
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:gallery_saver/gallery_saver.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:wallpaperapp/data/data.dart';
 import 'package:wallpaperapp/views/category.dart';
 import 'package:wallpaperapp/views/image_view.dart';
@@ -46,6 +52,26 @@ class _HomeState extends State<Home> {
     getTrendingWallpaper();
     category = getCategories();
     super.initState();
+  }
+
+  void _saveImageToGallery() async {
+    String path =
+        'https://image.shutterstock.com/image-photo/montreal-canada-july-11-2019-600w-1450023539.jpg';
+    GallerySaver.saveImage(path).then((bool success) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Image is downloaded"),
+          actions: [
+            FlatButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("Ok"))
+          ],
+        ),
+      );
+    });
   }
 
   @override

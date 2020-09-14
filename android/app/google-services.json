@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "558492340103",
+    "firebase_url": "https://log-influtter.firebaseio.com",
+    "project_id": "log-influtter",
+    "storage_bucket": "log-influtter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558492340103:android:e71fefb38a8e70f9f24d22",
+        "android_client_info": {
+          "package_name": "com.example.wallpaperapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558492340103-cipqde1413cnqt2b4f4fcdletjd9pins.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wallpaperapp",
+            "certificate_hash": "a4cfa15d30e7fdb3490e0343587a378bfca6456f"
+          }
+        },
+        {
+          "client_id": "558492340103-08n5vc1d2c8510755rg8rr1bbmjo1uh6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD40OYisf8xubRZL6594P-jFDMzaeVWohU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558492340103-08n5vc1d2c8510755rg8rr1bbmjo1uh6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
