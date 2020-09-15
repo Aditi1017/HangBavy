@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallpaperapp/models/wallpaper_model.dart';
+import 'package:wallpaperapp/views/image_view.dart';
 
 Widget brandName() {
   return Row(
@@ -28,16 +29,25 @@ Widget wallpapersList({List<WallpaperModel> wallpapers, context}) {
       mainAxisSpacing: 6.0,
       crossAxisSpacing: 6.0,
       children: wallpapers.map((wallpapers) {
-        return GridTile(
-          child: Container(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(18),
-              child: Image.network(
-                wallpapers.src.portrait,
-                fit: BoxFit.cover,
+        return InkWell(
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => ImageView(
+                imgURL: wallpapers.src.portrait,
               ),
+            ));
+          },
+          child: GridTile(
+            child: Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(18),
+                child: Image.network(
+                  wallpapers.src.portrait,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              //color: Colors.blue, use fit property
             ),
-            //color: Colors.blue, use fit property
           ),
         );
       }).toList(),

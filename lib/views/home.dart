@@ -5,8 +5,6 @@ import 'package:gallery_saver/gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:wallpaperapp/data/data.dart';
 import 'package:wallpaperapp/views/category.dart';
 import 'package:wallpaperapp/views/image_view.dart';
@@ -36,7 +34,7 @@ class _HomeState extends State<Home> {
     jsonData["photos"].forEach((element) {
       //print element will give the json
       //photos is directly key of this map
-      print(element);
+      // print(element);
       WallpaperModel wallpaperModel = WallpaperModel();
       wallpaperModel = WallpaperModel.fromMap(element);
       wallpapers.add(wallpaperModel);
@@ -50,6 +48,7 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     getTrendingWallpaper();
+
     category = getCategories();
     super.initState();
   }
@@ -169,6 +168,7 @@ class CategoriesTile extends StatelessWidget {
           children: <Widget>[
             GestureDetector(
               onTap: () {
+                print("Check");
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ImageView()));
               },
